@@ -1,8 +1,8 @@
-# Vanilla JS Test App
+# Overview
 
-This is a simple web app, demonstrating how to reference the Glue42 JavaScript library and initialize Glue42 in a Vanilla JS app.
+This repo contains a Glue42 Desktop testing guide, a sample end-to-end test and a sample Vanilla JS app, which you can use to learn how to test your app within the Glue42 environment.
 
-# Running the App
+# Running the Vanilla JS App
 
 1. From a Windows command prompt navigate to the app directory and start an `HTTP` server at port 3333:
 
