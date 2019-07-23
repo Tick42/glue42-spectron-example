@@ -19,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/Tick42/glue-spectron-example/issues"
   },
-  "homepage": "https://github.com/Tick42/glue-spectron-example#readme"
+  "homepage": "https://github.com/Tick42/glue-spectron-example#readme",
+  "devDependencies": {
+    "mocha": "^6.2.0",
+    "spectron": "^6.0.0"
+  }
 }

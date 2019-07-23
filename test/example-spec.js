@@ -1,21 +1,28 @@
-const assert = require('assert');
-const { Application } = require('spectron')
 
-describe('Application launch', function () {
-    this.timeout(320000);
+const Application = require("spectron").Application
+const assert = require("assert");
+
+describe("My Test App", function () {
+    // SETUP section
+
     let app;
 
+    this.timeout(20000)
+
     before(function () {
+
+        // get reference to Glue42 Desktop and configure it to start a single app (your app)
         app = new Application({
             path: `${process.env.LOCALAPPDATA}/Tick42/GlueDesktop/tick42-glue-desktop.exe`,
             cwd: `${process.env.LOCALAPPDATA}/Tick42/GlueDesktop`,
             args: [
                 "-- config=%LOCALAPPDATA%/Tick42/GlueDesktop/config/system.json",
-                "--singleApp=%LOCALAPPDATA%/Tick42/GlueDesktop/config/apps/devTools.json",
+                "--singleApp=%LOCALAPPDATA%/Tick42/GlueDesktop/config/apps/test-app.json",
                 "--useEmbeddedShell=false"
             ],
         });
 
+        // make sure you get the correct window reference (your app)
         const waitForSecondWindow = () => {
             return new Promise(resolve => {
                 const inverval = setInterval(() => {
@@ -30,6 +37,7 @@ describe('Application launch', function () {
             })
         };
 
+        // start Glue42 Desktop and your app before all tests
         return app.start()
             .then(() => waitForSecondWindow())
             .then(() => app.client.windowByIndex(1))
@@ -37,38 +45,27 @@ describe('Application launch', function () {
             .catch(console.error)
     });
 
-    after(() => {
-        console.log("after");
+    // shutdown Glue42 Desktop after all tests
+    after(function () {
         // if (app && app.isRunning()) {
-        //     return app.stop()
+        //     return app.stop();
         // }
     });
 
-    it('Should have the correct title', (done) => {
-        console.log("RUNNING");
-        app.client.getTitle()
-            .then((title) => {
-                console.log(title);
-                try {
-                    assert.equal(title, "Expected Title")
-                    done();
-                } catch (e) {
-                    done(e)
-                }
-            });
+    // TESTS section
+
+    // test 1
+    it("Should have the correct title", async function () {
+        const title = await app.client.getTitle();
+
+        assert.equal(title, "My Test App");
     });
 
-    it('Should get a url', async () => {
+    // test 2
+    it("Should get a URL", async () => {
         const title = await app.client.url("https://docs.glue42.com/")
             .getTitle();
 
-        assert.equal(title, 'Glue42 Documentation');
+        assert.equal(title, "Glue42 Documentation");
     });
-
-    it('Should get a url', async () => {
-        const title = await app.client.url("https://docs.glue42.com/")
-        app.client.click(".grid-item a");
-
-        assert.equal(title, 'Glue42 Documentation');
-    })
 });
