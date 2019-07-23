@@ -17,7 +17,7 @@ describe("My Test App", function () {
             cwd: `${process.env.LOCALAPPDATA}/Tick42/GlueDesktop`,
             args: [
                 "-- config=%LOCALAPPDATA%/Tick42/GlueDesktop/config/system.json",
-                "--singleApp=%LOCALAPPDATA%/Tick42/GlueDesktop/config/apps/test-app.json",
+                "--singleApp=%LOCALAPPDATA%/Tick42/UserData/T42-DEMO/apps/test-app.json",
                 "--useEmbeddedShell=false"
             ],
         });
