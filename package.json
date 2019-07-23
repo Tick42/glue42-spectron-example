@@ -1,0 +1,23 @@
+{
+  "name": "spectron-example",
+  "version": "1.0.0",
+  "description": "This is a simple web app, demonstrating how to reference the Glue42 JavaScript library and initialize Glue42 in a Vanilla JS app.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tick42/glue-spectron-example.git"
+  },
+  "author": "Glue42",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tick42/glue-spectron-example/issues"
+  },
+  "homepage": "https://github.com/Tick42/glue-spectron-example#readme"
+}

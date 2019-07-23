@@ -1,0 +1,17 @@
+{
+    "name": "test-app",
+    "title": "My Test App",
+    "type": "window",
+    "icon": "http://localhost:3333/resources/icon.png",
+    "ignoreSaveOnClose": true,
+    "details": {
+        "url": "http://localhost:3333/test-app.html",
+        "mode": "flat",
+        "top": 200,
+        "left": 150,
+        "width": 500,
+        "height": 400,
+        "minWidth": 400,
+        "minHeight": 300
+    }
+}

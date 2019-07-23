@@ -1,0 +1,43 @@
+body {
+	background-color: #000000;
+    font: 100% candara, sans-serif;
+}
+h1 {
+  margin-top: 30px;
+  color: #e3d9ff;
+  text-align: center;
+}
+table {
+    margin: auto;
+    table-layout: fixed;
+}
+th {
+    height: 30px;
+    text-align: left;
+    padding: 5px;
+    border-bottom: 1px solid #b0b0b0
+}
+td {
+    padding: 5px;
+    vertical-align: middle;
+    border-radius: 5px;
+}
+td:hover {
+    background-color: #707070;
+}
+tr:nth-child(even) {
+    background-color: #383737;
+}
+#appTitle {
+	background-color: #262626;
+    padding: 10px;
+    border-style: hidden;
+    border-radius: 6px;
+  
+}
+#data {
+    color: #e3d9ff;
+    border-collapse: separate;
+    width: 90%;
+}
+
