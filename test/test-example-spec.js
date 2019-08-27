@@ -1,8 +1,8 @@
-
 const Application = require("spectron").Application
 const assert = require("assert");
 
 describe("My Test App", function () {
+
     // SETUP section
 
     let app;
@@ -17,39 +17,21 @@ describe("My Test App", function () {
             cwd: `${process.env.LOCALAPPDATA}/Tick42/GlueDesktop`,
             args: [
                 "-- config=%LOCALAPPDATA%/Tick42/GlueDesktop/config/system.json",
-                "--singleApp=%LOCALAPPDATA%/Tick42/UserData/T42-DEMO/apps/test-app.json",
-                "--useEmbeddedShell=false"
+                "--noSplash",
+                "--singleApp=%LOCALAPPDATA%/Tick42/UserData/T42-DEMO/apps/test-app.json"
             ],
         });
 
-        // make sure you get the correct window reference (your app)
-        const waitForSecondWindow = () => {
-            return new Promise(resolve => {
-                const inverval = setInterval(() => {
-                    app.client.getWindowCount()
-                        .then((count) => {
-                            if (count > 2) {
-                                clearInterval(inverval);
-                                resolve();
-                            }
-                        });
-                }, 100)
-            })
-        };
-
         // start Glue42 Desktop and your app before all tests
         return app.start()
-            .then(() => waitForSecondWindow())
-            .then(() => app.client.windowByIndex(1))
-            .then(() => app.client.waitUntilWindowLoaded())
             .catch(console.error)
     });
 
     // shutdown Glue42 Desktop after all tests
     after(function () {
-        // if (app && app.isRunning()) {
-        //     return app.stop();
-        // }
+        if (app && app.isRunning()) {
+            return app.stop();
+        }
     });
 
     // TESTS section
