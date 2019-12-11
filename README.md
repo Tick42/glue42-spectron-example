@@ -12,7 +12,7 @@ npm install
 
 # Running the Vanilla JS App
 
-1. From a Windows command prompt navigate to the app directory and start an `HTTP` server at port 3333:
+1. From a Windows command prompt navigate to the **app directory** and start an `HTTP` server at port 3333:
 
 ```cmd
 http-server -p 3333
