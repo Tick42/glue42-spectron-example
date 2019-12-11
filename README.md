@@ -10,12 +10,12 @@ To install the necessary dependencies, open a command prompt in the main project
 npm install
 ```
 
-# Running the Vanilla JS App
+# Running the Project
 
-1. From a Windows command prompt navigate to the **app directory** and start an `HTTP` server at port 3333:
+1. Open a command prompt in the project directory and run the following command, which will create an `http-server` at port 3333 where the example app will be served:
 
 ```cmd
-http-server -p 3333
+npm start
 ```
 
 2. To add the test app to the list of applications in the App Manager on the Glue42 Desktop Toolbar, copy the `test-app.json` configuration file in `%LocalAppData%\Tick42\UserData\<REG-ENV>\apps`.
@@ -26,6 +26,10 @@ http-server -p 3333
 
 1. Shutdown Glue42 Desktop, if running.
 
-2. Setup your tests in your favorite editor. (For more details on how to do that, see our testing guide [here](https://staging-docs.glue42.com/branches/feature/G4E-1040-docs-new-structure/g4e/developers/testing-your-app/mocha-and-spectron/index.html))
+2. Setup your tests in your favorite editor. For more details on how to do that, see the testing guide in the **Glue42 Desktop** [documentation](https://docs.glue42.com/developers/testing-your-app/mocha-and-spectron/index.html).
 
-3. Run the tests with the `npm test` command.
+3. Open a **new** command prompt in the project directory and run the following command to execute the tests:
+
+```cmd
+npm test
+```

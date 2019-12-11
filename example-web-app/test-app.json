@@ -5,7 +5,7 @@
     "icon": "http://localhost:3333/resources/icon.png",
     "ignoreSaveOnClose": true,
     "details": {
-        "url": "http://localhost:3333/test-app.html",
+        "url": "http://localhost:3333/example-web-app/test-app.html",
         "mode": "flat",
         "top": 200,
         "left": 150,
