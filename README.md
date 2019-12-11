@@ -2,6 +2,14 @@
 
 This repo contains a simple JS web app and an example test, provided to help you learn how to test your app within the Glue42 environment.
 
+# Project Setup
+
+To install the necessary dependencies, open a command prompt in the main project directory and run:
+
+```cmd
+npm install
+```
+
 # Running the Vanilla JS App
 
 1. From a Windows command prompt navigate to the app directory and start an `HTTP` server at port 3333:
