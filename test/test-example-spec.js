@@ -48,6 +48,6 @@ describe("My Test App", function () {
         const title = await app.client.url("https://docs.glue42.com/")
             .getTitle();
 
-        assert.equal(title, "Glue42 Documentation - What is Glue42 Desktop? > General Overview");
+        assert.equal(title, "Glue42 Documentation - What is Glue42 Enterprise? > General Overview");
     });
 });
