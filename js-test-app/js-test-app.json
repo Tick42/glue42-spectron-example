@@ -2,16 +2,19 @@
     "name": "test-app",
     "title": "My Test App",
     "type": "window",
-    "icon": "http://localhost:3333/resources/icon.png",
-    "ignoreSaveOnClose": true,
+    "icon": "http://localhost:3333/icon.png",
+    "ignoreSavedLayout": true,
     "details": {
-        "url": "http://localhost:3333/example-web-app/test-app.html",
+        "url": "http://localhost:3333/index.html",
         "mode": "flat",
         "top": 200,
         "left": 150,
         "width": 500,
         "height": 400,
         "minWidth": 400,
-        "minHeight": 300
+        "minHeight": 300,
+        "autoInjectAPI":{
+            "enabled": false
+        }
     }
 }
