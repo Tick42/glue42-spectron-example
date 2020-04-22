@@ -18,7 +18,7 @@ describe("My Test App", function () {
             args: [
                 "-- config=%LOCALAPPDATA%/Tick42/GlueDesktop/config/system.json",
                 "--noSplash",
-                "--singleApp=%LOCALAPPDATA%/Tick42/UserData/T42-DEMO/apps/test-app.json"
+                "--singleApp=%LOCALAPPDATA%/Tick42/UserData/T42-DEMO/apps/js-test-app.json"
             ],
         });
 
