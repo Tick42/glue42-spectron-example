@@ -2,10 +2,10 @@
     "name": "test-app",
     "title": "My Test App",
     "type": "window",
-    "icon": "http://localhost:3333/icon.png",
+    "icon": "http://localhost:3333/js-test-app/icon.png",
     "ignoreSavedLayout": true,
     "details": {
-        "url": "http://localhost:3333/index.html",
+        "url": "http://localhost:3333/js-test-app/index.html",
         "mode": "flat",
         "top": 200,
         "left": 150,
