@@ -16,10 +16,15 @@ describe("My Test App", function () {
             path: `${process.env.LOCALAPPDATA}/Tick42/GlueDesktop/tick42-glue-desktop.exe`,
             cwd: `${process.env.LOCALAPPDATA}/Tick42/GlueDesktop`,
             args: [
-                "-- config=%LOCALAPPDATA%/Tick42/GlueDesktop/config/system.json",
+
+                // We need a config file, that has no application stores configured.
+                "--config=%LOCALAPPDATA%/Tick42/GlueDesktop/config/system-test.json",
                 "--noSplash",
                 "--singleApp=%LOCALAPPDATA%/Tick42/UserData/T42-DEMO/apps/js-test-app.json"
             ],
+
+            // A workaround for a limitation described in https://github.com/electron-userland/spectron/issues/443.
+            chromeDriverArgs: ['remote-debugging-port=' + Math.floor(Math.random() * (9999 - 9000) + 9000)],
         });
 
         // start Glue42 Desktop and your app before all tests
@@ -45,8 +50,9 @@ describe("My Test App", function () {
 
     // test 2
     it("Should get a URL", async () => {
-        const title = await app.client.url("https://docs.glue42.com/")
-            .getTitle();
+        await app.client.url("https://docs.glue42.com/");
+
+        const title = await app.client.getTitle();
 
         assert.equal(title, "Glue42 Documentation - What is Glue42 Enterprise? > General Overview");
     });
